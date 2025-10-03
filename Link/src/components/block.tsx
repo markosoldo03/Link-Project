@@ -10,7 +10,7 @@ title
 }: BlockProps) 
  {
     return(
-        <div className='w-1/3 h-auto bg-gray-700 flex m-3 flex-col '>
+        <div className='w-1/3 h-auto bg-gray-700 flex flex-col m-3 '>
       <div className='w-full h-3/4 overflow-hidden shrink-0 pr-2 '>
           <img className='w-full h-full object-cover m-1 rounded-lg ' src={image}></img>
           </div>
