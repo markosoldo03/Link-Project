@@ -18,14 +18,14 @@ export default function SearchForm({onSearch, placeholder}: SearchFormProps) {
     return (
     <form
       onSubmit={handleSubmit}
-      className="flex mr-0 w-full max-w-3xs mx-auto bg-linear-to-l from-[#222831] to-[#393E46] rounded-3xl shadow-md border border-gray-600  ">
+      className="absolute right-0 flex mr-2 mt-1 w-full max-w-3xs bg-linear-to-l from-[#222831] to-[#393E46] rounded-3xl shadow-md border border-gray-600  ">
         
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder={placeholder || "Search..."}
-        className="w-full px-2 py-2 text-white rounded-l-3xl focus:outline-none"
+        className="w-full px-2  text-white rounded-l-3xl focus:outline-none"
       />
       <button
         type="submit"

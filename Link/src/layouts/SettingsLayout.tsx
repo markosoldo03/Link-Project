@@ -5,13 +5,14 @@ import { Outlet } from 'react-router-dom'
 
 
 
-export default function MainLayout({children}:any) {
+export default function SettingsLayout({children}:any) {
   return (
     <>
     <Header/>
 
+
     <div className='flex pt-20'></div>
-        <WelcomeNavBar name="Welcome to Ma"/>
+        <WelcomeNavBar name="Welcome to Settings"/>
         <div className=' h-full overflow-hidden flex flex-wrap justify-center '>
         <Outlet/>
         {children}

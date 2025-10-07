@@ -1,18 +1,17 @@
+import {Routes, Route} from 'react-router-dom'
 import './App.css'
-import Block from './components/Block'
-import MainLayout from './layouts/MainLayout'
+import Home from './views/Home'
+import About from './views/About'
+import Settings from './views/Settings'
+
 
 function App() {
   return (
-    <MainLayout>
-
-      <div className='w-screen h-auto flex flex-col '>
-      <Block image="https://www.hdz.hr/photos/thumb/default.jpg"  title='Stranka te prati'/>
-      <Block image="https://www.hdz.hr/photos/thumb/default.jpg"  title='Stranka te prati'/>
-      <Block image="https://www.hdz.hr/photos/thumb/default.jpg"  title='Stranka te prati'/> 
-
-      </div>
-    </MainLayout>
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path='/settings' element={<Settings />} />
+    </Routes>
   )
 }
 
