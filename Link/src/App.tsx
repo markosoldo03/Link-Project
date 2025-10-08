@@ -3,6 +3,7 @@ import './App.css'
 import Home from './views/Home'
 import About from './views/About'
 import Settings from './views/Settings'
+import Contact from './views/Contact'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path='/settings' element={<Settings />} />
+        <Route path='/contact' element={<Contact />} />
     </Routes>
   )
 }

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 
 
-export default function SettingsLayout({children}:any) {
+export default function ContactLayout({children}:any) {
   return (
     <>
     <Header/>
