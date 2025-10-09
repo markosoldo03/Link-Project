@@ -11,7 +11,7 @@ export default function MainLayout({children}:any) {
     <Header/>
 
     <div className='flex pt-20'></div>
-        <WelcomeNavBar name="Welcome to MainLayout"/>
+        
         <div className=' h-full overflow-hidden flex flex-wrap justify-center '>
         <Outlet/>
         {children}

@@ -8,7 +8,7 @@ type BlockProps = {
 export default function WelcomeNavBar({name}: BlockProps) {
     const [open, setOpen] = useState(false);
   return (
-    <div className=' flex flex-col justify-center items-center transparent '>
+    <div className=' flex flex-col justify-center items-center transparent bg-transparent'>
             <div className='cursor-pointer top-20 w-25 h-1/2 flex justify-center'
                              onMouseEnter={() => setOpen(true)} 
                              onMouseLeave={() => setOpen(false)}>

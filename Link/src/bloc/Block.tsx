@@ -1,5 +1,5 @@
 import React from 'react'
-import ExpandableImage from './ExpandableImage';
+import ExpandableImage from '../components/ExpandableImage'
 type BlockProps = {
   image: string;
   title?: string;
