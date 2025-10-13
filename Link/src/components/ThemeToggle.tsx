@@ -1,16 +1,31 @@
 import { useTheme } from "../context/ThemeContext";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
-    <div className="flex justify-center p-10 max-w-screen w-full">
     <button
       onClick={toggleTheme}
-      className="flex absolute top-20 mt-5 mb-5 right-4 px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white shadow transition-all"
+      className="flex items-center gap-2 px-3 py-2 rounded-lg 
+                 border border-gray-200 dark:border-white/10 
+                 bg-white/70 dark:bg-[#1a1d24] backdrop-blur-md
+                 text-gray-700 dark:text-gray-200 
+                 shadow-sm hover:shadow-md 
+                 transition-all duration-300"
     >
-      {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
+      {isDark ? (
+        <>
+          <MoonIcon className="h-4 w-4 text-cyan-400" />
+          <span className="text-sm font-medium">Dark</span>
+        </>
+      ) : (
+        <>
+          <SunIcon className="h-4 w-4 text-amber-400" />
+          <span className="text-sm font-medium">Light</span>
+        </>
+      )}
     </button>
-    </div>
   );
 }

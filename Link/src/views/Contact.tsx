@@ -30,17 +30,16 @@ export default function Contact() {
     setSent(true);
   };
 
+  const gradientBg =
+    "bg-[radial-gradient(1200px_800px_at_10%_-10%,rgba(59,130,246,0.12),transparent),radial-gradient(900px_700px_at_90%_10%,rgba(168,85,247,0.12),transparent)]";
+
   return (
     <ContactLayout>
       <div
-        className="
-          min-h-screen w-full 
-          bg-gradient-to-br from-white via-white to-gray-100 
-          dark:from-[#0b0e13] dark:via-[#0e1218] dark:to-[#131820]
-          transition-colors duration-700
-        "
+        className={`min-h-screen w-full overflow-x-hidden overflow-y-auto ${gradientBg}
+          bg-white dark:bg-[#0b0e13] transition-colors duration-700 px-6 pb-24`}
       >
-        <div className="mx-auto max-w-6xl px-6 pt-10 pb-10">
+        <div className="mx-auto max-w-6xl pt-28 pb-10">
           {/* Header */}
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-white/10 bg-white/70 dark:bg-white/5 px-3 py-1 text-xs font-medium text-gray-700 dark:text-gray-300 backdrop-blur">
@@ -51,13 +50,12 @@ export default function Contact() {
             <h1
               className="mt-4 text-4xl sm:text-5xl font-extrabold 
               bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 
-              bg-clip-text text-transparent tracking-tight"
+              bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,255,255,0.15)]"
             >
               Contact Us
             </h1>
             <p className="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Have questions, ideas, or collaboration proposals? Drop us a
-              message and we’ll get back shortly.
+              Have questions, ideas, or collaboration proposals? Drop us a message and we’ll get back shortly.
             </p>
           </div>
 
@@ -84,30 +82,28 @@ export default function Contact() {
                 hint="Visit us for a coffee ☕"
               />
 
-                <div
-                    className="
-                        overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10
-                        bg-white/70 dark:bg-white/5 backdrop-blur shadow-xl aspect-[16/10]
-                    "
-                    >
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d172.64935911275472!2d17.834501143813227!3d43.24753653386548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1shr!2sba!4v1759959048061!5m2!1shr!2sba" 
-                    width="600" 
-                    height="450" 
-                    style={{border:0}} 
-                    allowFullScreen={true} 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"/>
-                </div>
+              <div
+                className="overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10
+                bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-2xl aspect-[16/10] transition hover:shadow-[0_0_30px_rgba(0,255,255,0.1)]"
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d172.64935911275472!2d17.834501143813227!3d43.24753653386548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1shr!2sba!4v1759959048061!5m2!1shr!2sba"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
 
             {/* RIGHT FORM SECTION */}
             <div className="lg:col-span-3">
               <div
-                className="
-                  rounded-3xl border border-gray-200 dark:border-white/10 
-                  bg-white/80 dark:bg-white/5 backdrop-blur-xl 
-                  shadow-2xl p-6 sm:p-10 transition-all
-                "
+                className="rounded-3xl border border-gray-200 dark:border-white/10 
+                bg-white/80 dark:bg-white/5 backdrop-blur-xl 
+                shadow-2xl p-6 sm:p-10 transition-all hover:shadow-[0_0_40px_rgba(0,255,255,0.1)]"
               >
                 {!sent ? (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -162,14 +158,12 @@ export default function Contact() {
                       <button
                         type="submit"
                         disabled={sending}
-                        className="
-                          inline-flex items-center gap-2 rounded-xl 
-                          bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 
-                          px-6 py-3 font-semibold text-white 
-                          shadow-lg shadow-blue-600/25 
-                          hover:opacity-95 active:scale-[0.98] 
-                          transition disabled:opacity-60 disabled:cursor-not-allowed
-                        "
+                        className="inline-flex items-center gap-2 rounded-xl 
+                        bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 
+                        px-6 py-3 font-semibold text-white 
+                        shadow-lg shadow-blue-600/25 
+                        hover:opacity-95 active:scale-[0.98] 
+                        transition disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         {sending ? (
                           <>
@@ -232,7 +226,7 @@ export default function Contact() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Reusable Subcomponents */
+/* Subcomponents */
 /* -------------------------------------------------------------------------- */
 
 function InfoCard({
@@ -247,7 +241,7 @@ function InfoCard({
   hint?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-white/5 backdrop-blur p-5 shadow-lg hover:shadow-xl transition">
+    <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-white/5 backdrop-blur-xl p-5 shadow-lg hover:shadow-[0_0_25px_rgba(0,255,255,0.1)] transition-all">
       <div className="flex items-center gap-3">
         <div className="rounded-xl bg-gradient-to-tr from-cyan-500/15 via-blue-500/15 to-purple-600/15 p-2 text-cyan-500 dark:text-cyan-400">
           {icon}
@@ -290,12 +284,10 @@ function Field({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="
-          mt-1 w-full rounded-xl border border-gray-200 dark:border-white/10 
-          bg-white dark:bg-[#0f1218] px-3 py-2 text-gray-900 dark:text-white 
-          placeholder-gray-400 dark:placeholder-gray-500 outline-none 
-          focus:ring-2 focus:ring-cyan-500/40 transition
-        "
+        className="mt-1 w-full rounded-xl border border-gray-200 dark:border-white/10 
+        bg-white dark:bg-[#0f1218] px-3 py-2 text-gray-900 dark:text-white 
+        placeholder-gray-400 dark:placeholder-gray-500 outline-none 
+        focus:ring-2 focus:ring-cyan-500/40 transition"
       />
     </label>
   );
@@ -327,12 +319,10 @@ function FieldTextarea({
         onChange={onChange}
         rows={rows}
         placeholder={placeholder}
-        className="
-          mt-1 w-full resize-none rounded-xl border border-gray-200 dark:border-white/10 
-          bg-white dark:bg-[#0f1218] px-3 py-2 text-gray-900 dark:text-white 
-          placeholder-gray-400 dark:placeholder-gray-500 outline-none 
-          focus:ring-2 focus:ring-cyan-500/40 transition
-        "
+        className="mt-1 w-full resize-none rounded-xl border border-gray-200 dark:border-white/10 
+        bg-white dark:bg-[#0f1218] px-3 py-2 text-gray-900 dark:text-white 
+        placeholder-gray-400 dark:placeholder-gray-500 outline-none 
+        focus:ring-2 focus:ring-cyan-500/40 transition"
       />
     </label>
   );
