@@ -4,6 +4,7 @@ import Home from './views/Home'
 import About from './views/About'
 import Settings from './views/Settings'
 import Contact from './views/Contact'
+import Members from './views/Members'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path='/settings' element={<Settings />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/members' element={<Members />} />
     </Routes>
   )
 }

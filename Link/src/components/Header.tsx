@@ -38,6 +38,7 @@ export default function Header() {
             { to: "/", label: "Home" },
             { to: "/about", label: "About" },
             { to: "/contact", label: "Contact" },
+            { to: "/members", label: "Members" },
             { to: "/settings", label: "Settings" },
           ].map((item) => (
             <Link
